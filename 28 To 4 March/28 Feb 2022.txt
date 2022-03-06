@@ -1,0 +1,272 @@
+Q.1) Take 10 integers from keyboard using loop and print their average value on the screen.
+
+
+import java.util.Scanner;
+class Simple{
+
+  public static void main(String[] args){
+
+    Scanner s = new Scanner(System.in);
+    int sum = 0;
+    int count=0 ;
+    for(int i = 0; i<10;i++){
+      System.out.println("Enter a number");
+     
+      sum = sum+s.nextInt();
+      count++;
+    }
+    System.out.println("Sum is "+sum);
+    System.out.println("The average sum is = "+sum/count);
+  }
+}
+//*********************************************************************************************//
+
+Q.2) Print the following patterns using loop :
+ a)
+   *
+   **
+   ***
+   ****
+
+Output___> 
+
+class Simple{
+  public static void main(String[] args){
+	int n = 4;
+    for(int i = 1; i<=n;i++){
+    	for(int j=1; j<=i; j++) {
+    		System.out.print("*");
+    	}
+    	System.out.println();
+    }
+  }
+}
+
+
+//*********************************************************************************************//
+  b)
+   
+       *  
+      *** 
+     *****
+      *** 
+       *  
+
+public class Diamond
+{
+    public static void main(String args[]) 
+    {
+        int n = 3, i, j, space = 1;
+       
+        space = n - 1;
+        for (j = 1; j <= n; j++) 
+        {
+            for (i = 1; i <= space; i++) 
+            {
+                System.out.print(" ");
+            }
+            space--;
+            for (i = 1; i <= 2 * j - 1; i++) 
+            {
+                System.out.print("*");                
+            }
+            System.out.println("");
+        }
+        space = 1;
+        for (j = 1; j <= n - 1; j++) 
+        {
+            for (i = 1; i <= space; i++) 
+            {
+                System.out.print(" ");
+            }
+            space++;
+            for (i = 1; i <= 2 * (n - j) - 1; i++) 
+            {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }
+}
+
+//*********************************************************************************************//
+    C) 
+      1010101
+       10101 
+        101  
+         1  
+
+
+ class Pattern{
+     public static void main(String[] args) {
+    	 
+    	 int number = 4;
+    	    int i, j; 
+    	    for(i = number; i >= 1; i--)
+    	    {
+    	     for(j = i; j < number; j++)
+    	        {
+    	            System.out.print(" ");
+    	        }
+    	        
+    	        for(j = 1; j <= (2 * i - 1); j++)
+    	        {
+    	        	int sum = i+j;
+    	            if(sum % 2 != 0) {
+    	            	System.out.print("1");
+    	            }else {
+    	            	System.out.print("0");
+    	            }
+    	        }
+    	        
+    	        System.out.println("");
+    	    } 
+     }
+}
+
+
+//*********************************************************************************************//
+
+Q.3) Print multiplication table of 24, 50 and 29 using loop.
+
+     public class Diamond
+{
+    public static void main(String args[]) 
+    {
+    	for(int i = 1; i<=10;i++){
+    	      System.out.println("24 * "+i+"\t=\t"+(24*i));
+    	     
+    	    }
+    	for(int i = 1; i<=10;i++){
+  	      System.out.println("50 * "+i+"\t=\t"+(50*i));
+  	     
+  	    }
+    	for(int i = 1; i<=10;i++){
+  	      System.out.println("29 * "+i+"\t=\t"+(29*i));
+  	     
+  	    }
+    }
+
+}
+//*********************************************************************************************//
+
+Q.4) Print ASCII values and their equivalent characters. ASCII value vary from 0 to 255.
+
+    public class ASCIIofAllCharacters {
+	public static void main(String[] args) 
+	{
+		
+		
+		for(int i = 0; i <= 255; i++)
+		{
+			System.out.println(" The ASCII value of " + (char)i + "  =  " + i);
+		}
+	}
+}
+//*********************************************************************************************//
+
+Q.5)  Factorial of any number n is represented by n! and is equal to 1*2*3*....*(n-1)*n. E.g.-     
+      Also,
+      1! = 1
+      0! = 0
+      Write a Java program to calculate factorial of a number.
+
+import java.util.Scanner;
+
+class CalculateFactorial{
+
+  public static void main(String[] args){
+
+    Scanner s = new Scanner(System.in);
+    System.out.println("Enter a number : ");
+    int x = s.nextInt();
+    int fact  =  1;
+   if(x==0) {
+	   System.out.println("Factorial is = 0 ");
+	   
+   }else {
+	   for(int i = 1; i<=x ; i++){
+		      fact = fact*i;
+		    }
+		    System.out.println("Factorial is "+fact);
+   }
+  }
+}
+//*********************************************************************************************//
+
+Q.6) Write a program to find greatest common divisor (GCD) or highest common factor (HCF) of given two numbers
+
+  class Hcf_LCM{
+  public static void main(String[] args){
+    Scanner s = new Scanner(System.in);
+    System.out.println("Enter a number 1 : ");
+    int x = s.nextInt();
+    System.out.println("Enter a number 2 : ");
+    int y = s.nextInt();
+    
+    int orig1 = x;
+    int orig2 = y;
+    
+    while( x % y != 0) {
+    	int rem = x % y;
+    	x = y;
+    	y = rem;
+    }
+    int HCF = y;
+    System.out.println("Hcf of two number is = "+HCF);
+    
+    int LCM = (orig1 * orig2) / HCF;
+    System.out.println("LCM of two number is = "+LCM);
+   
+  }
+}
+
+//*********************************************************************************************//
+
+Q.7) Take integer inputs from user until he/she presses q ( Ask to press q to quit after every integer input ). 
+     Print average and product of all numbers.
+
+class ASCIIofAllCharacters{
+   public static void main(String[] args) {
+
+
+   String choice ="";
+   int sum = 0;
+   int product = 1;
+   int count = 0;
+   Scanner input = new Scanner(System.in);
+
+
+   while(!choice.equals("q")){
+       System.out.println("Enter a number :  or q to quit : ");
+       choice = input.next();
+
+       if(!choice.equals("q")){
+          int number = Integer.parseInt(choice);
+          sum = sum+number;
+          product = product*number;
+          count++;
+    }
+} 
+
+System.out.println("Product is: "+product+"\nAverage is: "+((float)sum/count));
+
+}
+}
+ 
+//*********************************************************************************************//
+
+Q.8) Write an infinite loop.
+     A inifinte loop never ends. Condition is always true.
+
+     class InfiniteLoop{
+     public static void main(String[] args) {
+    	 while(true) {
+    		 System.out.println("Infinite loop");
+    	 }
+     }
+}
+
+
+//*********************************************************************************************//
+

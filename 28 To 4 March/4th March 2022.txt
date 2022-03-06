@@ -1,0 +1,97 @@
+Q.1) Bank Account.
+
+     public abstract class BankAccount {
+	
+	String customerName;
+	double balance;
+	String type;
+	static int numOfAccount;
+	public BankAccount() {
+		numOfAccount++;
+	}
+	
+	public void printStatement() {
+		System.out.println("Balance : "+balance);
+	}
+	public void depositAmount(int amount) {
+		balance = balance + amount;
+	}
+
+}
+public class SavingAccount extends BankAccount {
+	static int numOfSavingAccount;
+	public SavingAccount(String name, double balance) {
+		this.customerName = name;
+		this.balance = balance;
+		type = "Saving";
+		numOfSavingAccount++;
+	}
+
+}
+public class CheckingAccount extends BankAccount {
+	
+	public CheckingAccount(String name, double balance) {
+		this.customerName = name;
+		this.balance = balance;
+		type = "Checking";
+	}
+	public void WithdrawAmount(int withdrawMoney) {
+		if(balance > withdrawMoney) {
+		     balance = balance - withdrawMoney;
+		}
+	}
+
+}
+public class Driveraccount {
+
+	public static void main(String[] args) {
+		BankAccount s = new SavingAccount("Ajay", 20000);
+		s.depositAmount(1300);
+		s.printStatement();
+		
+		CheckingAccount c = new CheckingAccount("Akash", 15000);
+		c.depositAmount(2000);
+		c.WithdrawAmount(400);
+		c.printStatement();
+		
+		System.out.println(BankAccount.numOfAccount);
+		System.out.println(SavingAccount.numOfSavingAccount);
+		
+		BankAccount[] bankInfo = new BankAccount[2];
+		bankInfo[0] = s;
+		bankInfo[1] = c;
+		for(int i=0; i<2; i++ ) {
+			bankInfo[i].printStatement();
+		}
+
+	}
+
+}
+
+//*********************************************************************************************//
+Q.2)  B) Driving electric car
+
+
+Q.3)  B)  public and protected Both are use.
+
+
+Q.4)  A)  Base
+          Derived
+          DeriDerived
+
+
+Q.5)  B)  Removing Stmt-1 will make the program compilable and it will print the following: Base: Hello Derived.
+
+
+Q.6)  C)  13245
+
+
+Q.7)  A)  2
+
+
+Q.8)  D)  int
+
+
+//*********************************************************************************************//
+
+    

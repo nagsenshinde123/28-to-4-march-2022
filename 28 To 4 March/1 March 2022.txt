@@ -1,0 +1,78 @@
+Q.1) Write a program to replace a given substring in a sentence with another string. For example, 
+     in the sentence, ” A batman with bat” if we replace ”bat” with ”snow”, 
+     the new sentence should be printed as ”A snowman with snow”. 
+
+
+     public class StringClass {
+	
+
+	public static void main(String[] args) {
+		String str = "A batman with bat";
+		String w = str.replaceAll("bat", "snow");
+		
+		System.out.println(w);
+		
+		
+	}
+
+} 
+//**************************************************************************************************//
+
+Q.2) WAP to tOGGLE each word in the String? 
+
+     Input: This is Geekster 
+
+     Output: tHIS iS gEEKSTER 
+
+
+
+     public class B {
+	
+	public static void main(String[] args) {
+		String output = "";
+		String input = "this is geekster";
+		String[] inputWords = input.split(" ");
+		for(int i=0; i< inputWords.length;i++)
+		{
+			String w = inputWords[i];
+			
+			String firstLetter = w.substring(0,1);
+			String remainingWord = w.substring(1);
+			output = output+ firstLetter + remainingWord.toUpperCase() +" ";
+		}
+		System.out.println(output);
+	}
+
+}
+
+ 
+//**************************************************************************************************//
+
+Q.3) WAP to reverse tOGGLE each word in the String?
+  
+     Input: my name is khan 
+
+     Output: yM eMAN sI nAHK"
+
+
+    public class ToggleString {
+
+	public static void main(String[] args) {
+		String str = "my name is khan";
+		String[] word = str.split(" ");
+		String output = "";
+		for(String w : word) {
+			StringBuilder sb = new StringBuilder(w);
+			sb.reverse().toString();
+			String firstLetter = sb.substring(0,1);
+			String remainingLetters = sb.substring(1);
+			output += firstLetter.toLowerCase() + remainingLetters.toUpperCase()+" ";
+			
+		}
+		System.out.println(output);
+
+	}
+
+}
+
+//**************************************************************************************************//
